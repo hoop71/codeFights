@@ -1,26 +1,19 @@
-function sortByHeight(a) {
-    var arr = []; 
-    var nums = [];
-    var counter = 0;
+function isLucky(n) {
+    var str = n.toString()
+    var first = 0;
+    var second = 0;
+    for(let i = 0; i < str.length/2; i++){
+        first+= parseInt(str[i]);
+        
+    } console.log(first);
+    for(let j = str.length/2; j < str.length; j++){
+        second+= parseInt(str[j]);
+        
+    } console.log(second);
     
-    for(let i = 0; i < a.length; i++){
-        if(a[i] !== -1){
-            nums.push(a[i]);
-        }
+    if(first === second){
+        return true; 
     }
-    
-    nums.sort(function(a,b){
-        return a-b;
-    });
-
-    for(let j = 0; j < a.length; j++){
-        if(a[j] === -1){
-            arr.push(a[j])
-        } else {
-            arr.push(nums[counter]);
-            counter++;
-        }
-    }
-    return arr;
-
+    return false;
 }
+

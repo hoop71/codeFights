@@ -1,19 +1,20 @@
-function isLucky(n) {
-    var str = n.toString()
-    var first = 0;
-    var second = 0;
-    for(let i = 0; i < str.length/2; i++){
-        first+= parseInt(str[i]);
-        
-    } console.log(first);
-    for(let j = str.length/2; j < str.length; j++){
-        second+= parseInt(str[j]);
-        
-    } console.log(second);
+function commonCharacterCount(s1, s2) {
+    // strings to arrays
+    s1 = s1.split('');
+    s2 = s2.split('');
+    let count = 0;
     
-    if(first === second){
-        return true; 
+    for ( let i = 0; i < 26; i++ ) {
+        if ( s1[i] == undefined && s2[i] == undefined ) {
+            return count++
+        } else {
+            if ( s1.indexOf(s2[i]) > -1 ) {
+                count++;
+                s1[s1.indexOf(s2[i])] = ""; 
+            }
+            console.log(s1)
+            console.log(s2)
+        }
     }
-    return false;
+    return count
 }
-

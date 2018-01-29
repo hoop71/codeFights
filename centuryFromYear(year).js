@@ -1,3 +1,3 @@
-function checkPalindrome(inputString) {
-    return inputString.split('').reverse().join('') == inputString
+function centuryFromYear(year) { 
+	return Math.ceil(year/100);
 }
